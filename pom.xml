@@ -1,0 +1,109 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.github.osp-huhula</groupId>
+		<artifactId>huhula-pom</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>huhula-bom</artifactId>
+	<packaging>pom</packaging>
+	<organization>
+		<name>huhula</name>
+		<url>https://github.com/osp-huhula</url>
+	</organization>
+	<url>https://github.com/osp-huhula/huhula-bom</url>
+	<name>Huhula BOM</name>
+	<description>
+		Open-source Huhula Dependency Management BOM.
+	</description>
+	<properties>
+		<module.bundle.version>${project.version}</module.bundle.version>
+		<!-- DEPENDENCY VERSION -->
+		<commons-lang3.version>3.6</commons-lang3.version>
+		<junit.version>4.12</junit.version>
+		<mockito-all.version>1.10.19</mockito-all.version>
+	</properties>
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+		</license>
+	</licenses>
+	<scm>
+		<url>git@github.com:osp-huhula/huhula-pom.git</url>
+		<connection>scm:git:git@github.com:osp-huhula/huhula-pom.git</connection>
+		<developerConnection>scm:git:git@github.com:osp-huhula/huhula-pom.git</developerConnection>
+	</scm>
+	<developers>
+		<developer>
+			<name>João Carlos Brasileiro</name>
+			<email>jbrasileiro.git@gmail.com</email>
+			<url>https://github.com/jbrasileiro</url>
+			<roles>
+				<role>Java Developer</role>
+			</roles>
+		</developer>
+	</developers>
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>http://github.com/osp-huhula/huhula-bom/issues</url>
+	</issueManagement>
+	<distributionManagement>
+		<snapshotRepository>
+			<id>oss.sonatype.org</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>oss.sonatype.org</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+		</repository>
+	</distributionManagement>
+	<mailingLists>
+	</mailingLists>
+	<dependencyManagement>
+		<dependencies>
+			<!-- MODULES VERSION -->
+			<!-- DEPENDENCY VERSION -->
+			<!-- ################# -->
+			<!-- PROVIDE -->
+			<!-- ################# -->
+			<!-- ################# -->
+			<!-- COMPILE -->
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>${commons-lang3.version}</version>
+			</dependency>
+			<!-- ################# -->
+			<!-- ################# -->
+			<!-- TEST -->
+			<!-- ################# -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.mockito</groupId>
+				<artifactId>mockito-all</artifactId>
+				<version>${mockito-all.version}</version>
+				<scope>test</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	<build>
+		<finalName>${project.artifactId}-${project.version}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>
